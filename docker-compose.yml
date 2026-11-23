@@ -1,0 +1,11 @@
+# OPTIONAL alternative to scripts/setup_kafka.sh for machines that have Docker.
+# Starts a single-node Apache Kafka broker (KRaft mode) on localhost:9092.
+#   docker compose up -d      # start
+#   docker compose down       # stop
+services:
+  kafka:
+    image: apache/kafka:4.1.0
+    container_name: sis2-kafka
+    ports:
+      - "9092:9092"
+    restart: unless-stopped

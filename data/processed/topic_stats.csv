@@ -1,0 +1,7 @@
+primary_search_topic,repo_count,mean_stars,median_stars,max_stars,median_forks,median_open_issues,archived_repos
+machine-learning,38,49386.29,34517.0,201789,4854.0,100.5,1
+deep-learning,77,38002.61,28540.0,169373,5001.0,132.0,4
+data-science,99,21659.78,13757.0,92422,2435.0,133.0,3
+devops,96,19916.94,10380.0,260770,1105.0,76.0,4
+cybersecurity,100,11833.41,6375.0,116217,783.5,20.5,4
+blockchain,100,9704.22,5472.0,73712,1695.5,157.5,13

@@ -1,0 +1,16 @@
+schema_context,column,check,check_number,failure_case,index
+DataFrameSchema,"repo_id, search_topic",multiple_fields_uniqueness,,,602
+DataFrameSchema,<row>,R9: updated_at must not be earlier than created_at,0,,601
+DataFrameSchema,<row>,R10: full_name must equal owner_login/repo_name,1,,601
+DataFrameSchema,<row>,R9: updated_at must not be earlier than created_at,0,,602
+Column,updated_at,R8: updated_at is in the future,0,2027-11-23 18:27:24.636304,603
+Column,created_at,R7: created_at earlier than GitHub launch,0,2005-05-05 00:00:00,602
+Column,open_issues_count,not_nullable,,,603
+Column,forks_count,R6: forks_count must be >= 0,0,-3,600
+Column,stargazers_count,R6: stargazers_count must be >= 0,0,-50,600
+Column,search_topic,R5: search_topic must be a configured topic,0,unknown-topic,601
+Column,owner_type,R4: owner_type must be User or Organization,0,Robot,600
+Column,full_name,R3: full_name must look like owner/repo,0,TEST invalid name,601
+Column,repo_id,R1: repo_id must be a positive integer,0,-1,600
+Column,repo_id,not_nullable,,,603
+Column,created_at,not_nullable,,,601

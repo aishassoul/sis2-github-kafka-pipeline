@@ -1,0 +1,240 @@
+{
+  "shape": {
+    "rows": 510,
+    "columns": 35
+  },
+  "dtypes": {
+    "repo_id": "int64",
+    "full_name": "str",
+    "repo_name": "str",
+    "owner_login": "str",
+    "owner_type": "str",
+    "description": "str",
+    "language": "str",
+    "license_key": "str",
+    "stargazers_count": "int64",
+    "forks_count": "int64",
+    "open_issues_count": "int64",
+    "size_kb": "int64",
+    "topics_count": "int64",
+    "is_fork": "int64",
+    "is_archived": "int64",
+    "default_branch": "str",
+    "html_url": "str",
+    "created_at": "datetime64[us, UTC]",
+    "updated_at": "datetime64[us, UTC]",
+    "pushed_at": "datetime64[us, UTC]",
+    "primary_search_topic": "str",
+    "search_topics": "str",
+    "matched_topics_count": "int64",
+    "stars_log": "float64",
+    "forks_to_stars_ratio": "float64",
+    "issues_per_1k_stars": "float64",
+    "repo_age_days": "int64",
+    "days_since_last_push": "int64",
+    "stars_per_year": "float64",
+    "popularity_tier": "str",
+    "is_star_outlier": "int64",
+    "is_active_popular": "int64",
+    "created_year": "int64",
+    "collected_at": "datetime64[us, UTC]",
+    "first_loaded_at": "str"
+  },
+  "numeric_describe": {
+    "stargazers_count": {
+      "count": 510.0,
+      "mean": 21594.09,
+      "std": 26168.32,
+      "min": 2614.0,
+      "25%": 6843.25,
+      "50%": 11988.5,
+      "75%": 26443.25,
+      "max": 260770.0
+    },
+    "forks_count": {
+      "count": 510.0,
+      "mean": 3730.71,
+      "std": 6050.54,
+      "min": 3.0,
+      "25%": 903.25,
+      "50%": 2028.5,
+      "75%": 4169.75,
+      "max": 77415.0
+    },
+    "open_issues_count": {
+      "count": 510.0,
+      "mean": 378.37,
+      "std": 1045.79,
+      "min": 0.0,
+      "25%": 19.0,
+      "50%": 92.0,
+      "75%": 340.0,
+      "max": 18481.0
+    },
+    "size_kb": {
+      "count": 510.0,
+      "mean": 431429.98,
+      "std": 2040685.09,
+      "min": 68.0,
+      "25%": 12735.5,
+      "50%": 70748.0,
+      "75%": 254163.0,
+      "max": 37119144.0
+    },
+    "repo_age_days": {
+      "count": 510.0,
+      "mean": 2834.79,
+      "std": 1315.0,
+      "min": 44.0,
+      "25%": 1893.75,
+      "50%": 2896.5,
+      "75%": 3751.0,
+      "max": 6520.0
+    },
+    "days_since_last_push": {
+      "count": 510.0,
+      "mean": 221.58,
+      "std": 404.6,
+      "min": 0.0,
+      "25%": 0.0,
+      "50%": 9.0,
+      "75%": 234.25,
+      "max": 2378.0
+    },
+    "stars_per_year": {
+      "count": 510.0,
+      "mean": 4533.79,
+      "std": 9258.2,
+      "min": 226.82,
+      "25%": 878.2,
+      "50%": 1962.3,
+      "75%": 4544.74,
+      "max": 117245.25
+    },
+    "forks_to_stars_ratio": {
+      "count": 510.0,
+      "mean": 0.19,
+      "std": 0.15,
+      "min": 0.0,
+      "25%": 0.1,
+      "50%": 0.15,
+      "75%": 0.22,
+      "max": 1.49
+    }
+  },
+  "skewness": {
+    "stargazers_count": 3.951,
+    "forks_count": 6.205,
+    "open_issues_count": 11.116,
+    "size_kb": 13.616,
+    "repo_age_days": 0.032,
+    "days_since_last_push": 2.221,
+    "stars_per_year": 6.662,
+    "forks_to_stars_ratio": 3.103
+  },
+  "categorical_summary": {
+    "language": {
+      "unique": 32,
+      "top": "Python",
+      "top_frequency": 166
+    },
+    "owner_type": {
+      "unique": 2,
+      "top": "Organization",
+      "top_frequency": 329
+    },
+    "license_key": {
+      "unique": 16,
+      "top": "MIT",
+      "top_frequency": 137
+    },
+    "primary_search_topic": {
+      "unique": 6,
+      "top": "blockchain",
+      "top_frequency": 100
+    },
+    "popularity_tier": {
+      "unique": 4,
+      "top": "Popular (<10k)",
+      "top_frequency": 216
+    }
+  },
+  "language_top10": {
+    "Python": 166,
+    "Go": 68,
+    "Unknown": 67,
+    "Jupyter Notebook": 40,
+    "TypeScript": 35,
+    "C++": 26,
+    "Rust": 25,
+    "JavaScript": 17,
+    "Shell": 11,
+    "Java": 10
+  },
+  "owner_type_share_percent": {
+    "Organization": 64.51,
+    "User": 35.49
+  },
+  "license_top5": {
+    "MIT": 137,
+    "APACHE-2.0": 134,
+    "OTHER": 78,
+    "NO_LICENSE": 57,
+    "GPL-3.0": 29
+  },
+  "topic_link_counts": {
+    "devops": 100,
+    "deep-learning": 100,
+    "machine-learning": 100,
+    "cybersecurity": 100,
+    "data-science": 100,
+    "blockchain": 100
+  },
+  "topic_median_stars": {
+    "machine-learning": 31613.5,
+    "deep-learning": 30132.5,
+    "data-science": 13939.0,
+    "devops": 10380.0,
+    "cybersecurity": 6375.0,
+    "blockchain": 5472.0
+  },
+  "tier_counts": {
+    "Popular (<10k)": 216,
+    "High (10k-25k)": 153,
+    "Very high (25k-50k)": 95,
+    "Mega (50k+)": 46
+  },
+  "active_popular_count": 234,
+  "active_popular_percent": 45.88,
+  "archived_count": 29,
+  "pearson_log_stars_log_forks": 0.774,
+  "spearman_stars_forks": 0.784,
+  "created_per_year": {
+    "2009": 1,
+    "2010": 7,
+    "2011": 6,
+    "2012": 11,
+    "2013": 11,
+    "2014": 23,
+    "2015": 43,
+    "2016": 41,
+    "2017": 50,
+    "2018": 66,
+    "2019": 52,
+    "2020": 44,
+    "2021": 37,
+    "2022": 38,
+    "2023": 28,
+    "2024": 20,
+    "2025": 15,
+    "2026": 17
+  },
+  "figures": [
+    "figures/fig1_stars_distribution.png",
+    "figures/fig2_top_languages.png",
+    "figures/fig3_stars_by_topic_boxplot.png",
+    "figures/fig4_stars_vs_forks.png",
+    "figures/fig5_created_per_year.png",
+    "figures/fig6_topic_tier_heatmap.png"
+  ]
+}

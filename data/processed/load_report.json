@@ -1,0 +1,27 @@
+{
+  "database": "data/output.db",
+  "processed_records": 510,
+  "stored_records": 510,
+  "topic_links_stored": 600,
+  "load_1": {
+    "rows_processed": 510,
+    "rows_before": 0,
+    "rows_after": 510,
+    "new_rows_inserted": 510,
+    "existing_rows_upserted": 0
+  },
+  "load_2": {
+    "rows_processed": 510,
+    "rows_before": 510,
+    "rows_after": 510,
+    "new_rows_inserted": 0,
+    "existing_rows_upserted": 510
+  },
+  "checksum_after_load_1": "6220ea7b844e7442adfe343b9a4480aca40753814f34f1adc310ee005b3dce12",
+  "checksum_after_load_2": "6220ea7b844e7442adfe343b9a4480aca40753814f34f1adc310ee005b3dce12",
+  "topic_links_after_load_1": 600,
+  "topic_links_after_load_2": 600,
+  "idempotent": true,
+  "duplicate_repo_ids_in_db": 0,
+  "processed_equals_stored": true
+}

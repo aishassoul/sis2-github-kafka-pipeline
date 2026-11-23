@@ -1,0 +1,134 @@
+-- 1_row_counts
+SELECT COUNT(*)                  AS total_rows,
+       COUNT(DISTINCT repo_id)   AS distinct_repo_ids,
+       COUNT(DISTINCT full_name) AS distinct_full_names
+FROM repositories;
+
+ total_rows  distinct_repo_ids  distinct_full_names
+        510                510                  510
+
+-- 2_duplicate_repo_ids (expected: no rows)
+SELECT repo_id, COUNT(*) AS occurrences
+FROM repositories
+GROUP BY repo_id
+HAVING COUNT(*) > 1;
+
+(no rows)
+
+-- 3_missing_required_values (expected: all zeros)
+SELECT SUM(full_name IS NULL)        AS null_full_name,
+       SUM(language IS NULL)         AS null_language,
+       SUM(created_at IS NULL)       AS null_created_at,
+       SUM(stargazers_count IS NULL) AS null_stars
+FROM repositories;
+
+ null_full_name  null_language  null_created_at  null_stars
+              0              0                0           0
+
+-- 4_value_range_check (expected: 0)
+SELECT COUNT(*) AS rows_with_invalid_values
+FROM repositories
+WHERE stargazers_count < 0 OR forks_count < 0 OR open_issues_count < 0
+   OR owner_type NOT IN ('User', 'Organization')
+   OR updated_at < created_at;
+
+ rows_with_invalid_values
+                        0
+
+-- 5_top_10_repositories_by_stars
+SELECT full_name, language, stargazers_count, forks_count, primary_search_topic
+FROM repositories
+ORDER BY stargazers_count DESC
+LIMIT 10;
+
+                             full_name         language  stargazers_count  forks_count primary_search_topic
+trimstray/the-book-of-secret-knowledge          Unknown            260770        14946               devops
+                 tensorflow/tensorflow              C++            201789        77415     machine-learning
+                        f/prompts.chat              MDX            178324        22729     machine-learning
+              huggingface/transformers           Python            169373        35278        deep-learning
+  AUTOMATIC1111/stable-diffusion-webui           Python            165373        31080        deep-learning
+             sherlock-project/sherlock           Python            116217        13275        cybersecurity
+               rasbt/LLMs-from-scratch Jupyter Notebook            108910        16832     machine-learning
+                       pytorch/pytorch           Python            105798        30701     machine-learning
+            microsoft/ML-For-Beginners Jupyter Notebook             92422        22961         data-science
+                         opencv/opencv              C++             91692        57124        deep-learning
+
+-- 6_repositories_per_language
+SELECT language, COUNT(*) AS repo_count, ROUND(AVG(stargazers_count), 0) AS avg_stars
+FROM repositories
+GROUP BY language
+ORDER BY repo_count DESC
+LIMIT 10;
+
+        language  repo_count  avg_stars
+          Python         166    26583.0
+              Go          68    14954.0
+         Unknown          67    21117.0
+Jupyter Notebook          40    26749.0
+      TypeScript          35    13623.0
+             C++          26    34026.0
+            Rust          25    18318.0
+      JavaScript          17    12834.0
+           Shell          11     8514.0
+            Java          10    15526.0
+
+-- 7_repositories_per_topic_link_table
+SELECT search_topic, COUNT(*) AS linked_repositories
+FROM repository_topics
+GROUP BY search_topic
+ORDER BY linked_repositories DESC;
+
+    search_topic  linked_repositories
+machine-learning                  100
+          devops                  100
+   deep-learning                  100
+    data-science                  100
+   cybersecurity                  100
+      blockchain                  100
+
+-- 8_orphan_topic_links (expected: 0)
+SELECT COUNT(*) AS orphan_links
+FROM repository_topics rt
+LEFT JOIN repositories r ON r.repo_id = rt.repo_id
+WHERE r.repo_id IS NULL;
+
+ orphan_links
+            0
+
+-- 9_popularity_tier_distribution
+SELECT popularity_tier, COUNT(*) AS repo_count
+FROM repositories
+GROUP BY popularity_tier
+ORDER BY MIN(stargazers_count);
+
+    popularity_tier  repo_count
+     Popular (<10k)         216
+     High (10k-25k)         153
+Very high (25k-50k)          95
+        Mega (50k+)          46
+
+-- 10_repositories_created_per_year
+SELECT created_year, COUNT(*) AS repo_count
+FROM repositories
+GROUP BY created_year
+ORDER BY created_year;
+
+ created_year  repo_count
+         2009           1
+         2010           7
+         2011           6
+         2012          11
+         2013          11
+         2014          23
+         2015          43
+         2016          41
+         2017          50
+         2018          66
+         2019          52
+         2020          44
+         2021          37
+         2022          38
+         2023          28
+         2024          20
+         2025          15
+         2026          17

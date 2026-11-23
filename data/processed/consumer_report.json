@@ -1,0 +1,15 @@
+{
+  "run_id": "20261123T182720Z-52cbd8",
+  "topic": "github_repositories",
+  "expected_records": 600,
+  "messages_read": 1803,
+  "records_consumed": 600,
+  "skipped_other_runs": 1202,
+  "deserialization_errors": 0,
+  "broker_errors": 0,
+  "duplicate_deliveries": 0,
+  "end_of_stream_received": true,
+  "stop_reason": "END_OF_STREAM received",
+  "all_expected_received": true,
+  "duration_seconds": 3.28
+}

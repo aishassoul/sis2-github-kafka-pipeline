@@ -1,0 +1,35 @@
+{
+  "counts": {
+    "1_collected_api_records": 600,
+    "2_published_to_kafka": 600,
+    "3_consumed_from_kafka": 600,
+    "4_test_records_added": 4,
+    "5_validated_total": 604,
+    "6_valid_records": 600,
+    "7_invalid_records": 4,
+    "8_records_after_cleaning": 510,
+    "9_records_stored_in_sqlite": 510
+  },
+  "explanations": [
+    "Collected = published = consumed: no message was lost in Kafka.",
+    "Validated = consumed (600) + 4 deliberately invalid test records = 604.",
+    "Invalid = 4 (4 test records + 0 real records); they were quarantined in invalid_records.csv.",
+    "Valid (600) -> after cleaning (510): 90 rows were the same repository returned by several overlapping topic queries and were merged into one row (topics kept in search_topics / repository_topics).",
+    "After cleaning = stored in SQLite: True (510 vs 510).",
+    "Idempotency: second load inserted 0 new rows, table checksum unchanged = True, duplicate ids in DB = 0."
+  ],
+  "checks": {
+    "at_least_200_collected": true,
+    "at_least_200_published": true,
+    "at_least_200_consumed": true,
+    "published_equals_consumed": true,
+    "all_test_records_detected": true,
+    "valid_plus_invalid_equals_total": true,
+    "cleaned_equals_stored": true,
+    "idempotent_reload": true,
+    "no_duplicates_in_db": true
+  },
+  "all_checks_passed": true,
+  "kafka_run_id": "20261123T182720Z-52cbd8",
+  "duration_seconds": 6.1
+}

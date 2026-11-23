@@ -1,0 +1,33 @@
+{
+  "received_from_kafka": 600,
+  "test_records_added": 4,
+  "total_validated": 604,
+  "valid_records": 600,
+  "invalid_records": 4,
+  "invalid_real_records": 0,
+  "invalid_test_records": 4,
+  "all_test_records_detected": true,
+  "failure_cases_total": 15,
+  "failure_cases_raw_pandera": 94,
+  "failures_per_rule": {
+    "not_nullable": 3,
+    "R9: updated_at must not be earlier than created_at": 2,
+    "multiple_fields_uniqueness": 1,
+    "R10: full_name must equal owner_login/repo_name": 1,
+    "R8: updated_at is in the future": 1,
+    "R7: created_at earlier than GitHub launch": 1,
+    "R6: forks_count must be >= 0": 1,
+    "R6: stargazers_count must be >= 0": 1,
+    "R5: search_topic must be a configured topic": 1,
+    "R4: owner_type must be User or Organization": 1,
+    "R3: full_name must look like owner/repo": 1,
+    "R1: repo_id must be a positive integer": 1
+  },
+  "test_record_errors": {
+    "TEST_1": "[forks_count] R6: forks_count must be >= 0; [stargazers_count] R6: stargazers_count must be >= 0; [owner_type] R4: owner_type must be User or Organization; [repo_id] R1: repo_id must be a positive integer",
+    "TEST_2": "[<row>] R9: updated_at must not be earlier than created_at; [<row>] R10: full_name must equal owner_login/repo_name; [search_topic] R5: search_topic must be a configured topic; [full_name] R3: full_name must look like owner/repo; [created_at] not_nullable",
+    "TEST_3": "[repo_id, search_topic] multiple_fields_uniqueness; [<row>] R9: updated_at must not be earlier than created_at; [created_at] R7: created_at earlier than GitHub launch",
+    "TEST_4": "[updated_at] R8: updated_at is in the future; [open_issues_count] not_nullable; [repo_id] not_nullable"
+  },
+  "handling_strategy": "quarantine: invalid rows removed from main flow and saved to invalid_records.csv"
+}

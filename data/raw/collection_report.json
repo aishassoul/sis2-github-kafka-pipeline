@@ -1,0 +1,110 @@
+{
+  "endpoint": "https://api.github.com/search/repositories",
+  "collected_at": "2026-11-23T18:11:20Z",
+  "topics": [
+    "machine-learning",
+    "deep-learning",
+    "data-science",
+    "cybersecurity",
+    "devops",
+    "blockchain"
+  ],
+  "min_stars": 100,
+  "per_page": 100,
+  "pages_per_topic": 1,
+  "total_records": 600,
+  "unique_repo_ids": 510,
+  "failed_requests": 0,
+  "requests": [
+    {
+      "topic": "machine-learning",
+      "page": 1,
+      "params": {
+        "q": "topic:machine-learning stars:>=100",
+        "sort": "stars",
+        "order": "desc",
+        "per_page": 100,
+        "page": 1
+      },
+      "status": "ok",
+      "items": 100,
+      "total_count": 6714,
+      "incomplete_results": false
+    },
+    {
+      "topic": "deep-learning",
+      "page": 1,
+      "params": {
+        "q": "topic:deep-learning stars:>=100",
+        "sort": "stars",
+        "order": "desc",
+        "per_page": 100,
+        "page": 1
+      },
+      "status": "ok",
+      "items": 100,
+      "total_count": 7170,
+      "incomplete_results": false
+    },
+    {
+      "topic": "data-science",
+      "page": 1,
+      "params": {
+        "q": "topic:data-science stars:>=100",
+        "sort": "stars",
+        "order": "desc",
+        "per_page": 100,
+        "page": 1
+      },
+      "status": "ok",
+      "items": 100,
+      "total_count": 1759,
+      "incomplete_results": false
+    },
+    {
+      "topic": "cybersecurity",
+      "page": 1,
+      "params": {
+        "q": "topic:cybersecurity stars:>=100",
+        "sort": "stars",
+        "order": "desc",
+        "per_page": 100,
+        "page": 1
+      },
+      "status": "ok",
+      "items": 100,
+      "total_count": 1102,
+      "incomplete_results": false
+    },
+    {
+      "topic": "devops",
+      "page": 1,
+      "params": {
+        "q": "topic:devops stars:>=100",
+        "sort": "stars",
+        "order": "desc",
+        "per_page": 100,
+        "page": 1
+      },
+      "status": "ok",
+      "items": 100,
+      "total_count": 1354,
+      "incomplete_results": false
+    },
+    {
+      "topic": "blockchain",
+      "page": 1,
+      "params": {
+        "q": "topic:blockchain stars:>=100",
+        "sort": "stars",
+        "order": "desc",
+        "per_page": 100,
+        "page": 1
+      },
+      "status": "ok",
+      "items": 100,
+      "total_count": 1486,
+      "incomplete_results": false
+    }
+  ]
+}

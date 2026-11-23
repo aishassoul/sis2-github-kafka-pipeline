@@ -1,7 +1,7 @@
 # SIS 2 — Data Streaming and Validation Pipeline with Apache Kafka and Pandera
 
 **Course:** Data Collection & Preparation
-**Group members:** Aisha Kuantay, Arina Bakyt, Tomiris Muratova, Ranida Safyntayeva
+**Group members:** Aisha Kuantay, Arina Bakyt, Tomiris Muratova, Ranida Sagyntayeva
 **Data source:** [GitHub REST API](https://docs.github.com/en/rest) — `GET /search/repositories`
 
 ## 1. Project overview
